@@ -4,17 +4,17 @@ import ServicesCard from "../ServicesCard";
 function ServicesOccasions() {
   let services = [
     {
-      title: "Services",
+      title: "Occasions",
       about:
         "asdasdadqnj n3 32noe 23ioj qjnd qekn 3qi eniqowi nqo enk oqji eq oi3 noi2 ji2",
     },
     {
-      title: "Services",
+      title: "Occasions",
       about:
         "asdasdadqnj n3 32noe 23ioj qjnd qekn 3qi eniqowi nqo enk oqji eq oi3 noi2 ji2",
     },
     {
-      title: "Services",
+      title: "Occasions",
       about:
         "asdasdadqnj n3 32noe 23ioj qjnd qekn 3qi eniqowi nqo enk oqji eq oi3 noi2 ji2",
     },
@@ -23,7 +23,7 @@ function ServicesOccasions() {
     <>
       <h2 className="cluster-header">Venues</h2>
       <div
-        className="uk-child-width-1-3@m uk-grid-match uk-margin-medium"
+        className="uk-child-width-1-3@m uk-grid-match uk-margin-medium uk-margin-bottom"
         uk-grid="true"
         id="portfolio-section"
         uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: false"
