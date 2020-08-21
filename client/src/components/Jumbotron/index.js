@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./styles.css";
 import image from "./images/image-jumbotron.jpg";
 
 function Jumbotron() {

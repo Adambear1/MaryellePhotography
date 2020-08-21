@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap");
+
+.cluster-header,
+.section-header {
+  color: rgba(0, 0, 0, 0.9) !important;
+  font-family: "Montserrat", sans-serif;
+  transition: ease 0.3s;
+}
+.section-header {
+  font-weight: bold;
+}
+
+.section-header:hover {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.services-card-name {
+  padding: 80px;
+}
