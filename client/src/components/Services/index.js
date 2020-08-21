@@ -3,15 +3,21 @@ import ServicesCard from "../ServicesCard";
 import "./styles.css";
 import ServicesVenue from "../ServicesVenue";
 import ServicesOccasions from "../ServicesOccasions";
+import ServicesBody from "../ServicesBody";
 
 function Services() {
   const [main, setMain] = useState();
+  const [selectorState, setSelectorState] = useState({
+    Venues: <ServicesVenue />,
+    Occasions: <ServicesOccasions />,
+  });
 
   function click(e) {
     if (e.target.innerText == "") {
       setMain(main);
     }
     setMain(e.target.innerText);
+    console.log(selectorState[main]);
   }
   console.log(main);
 
@@ -102,15 +108,7 @@ function Services() {
         uk-slidenav-next="true"
         uk-slider-item="next"
       ></a>
-
-      <div className="uk-height-medium">
-        <div uk-overflow-auto="selContainer: .uk-height-medium; selContent: .js-wrapper">
-          <div className="uk-grid-medium" uk-grid>
-            <h1 classNameName="section-header uk-margin-top">Services</h1>
-          </div>
-          <ServicesVenue />
-        </div>
-      </div>
+      <ServicesBody selector={selectorState.main} />
     </div>
   );
 }
