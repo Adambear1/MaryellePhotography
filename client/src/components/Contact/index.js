@@ -1,10 +1,11 @@
 import React from "react";
 
-function BookNow() {
+function Contact() {
   return (
     <div className="uk-section uk-section-large uk-section-muted">
       <div className="uk-container">
         <h3 className="uk-text-center">Book Now</h3>
+        <h4 className="uk-text-center">(253)-555-5555</h4>
 
         <div className="uk-grid-match uk-child-width-1-3@m" uk-grid="true">
           <div></div>
@@ -24,4 +25,4 @@ function BookNow() {
   );
 }
 
-export default BookNow;
+export default Contact;

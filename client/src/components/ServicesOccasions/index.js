@@ -1,5 +1,6 @@
 import React from "react";
 import ServicesCard from "../ServicesCard";
+import "./styles.css";
 
 function ServicesOccasions() {
   let services = [
@@ -23,7 +24,7 @@ function ServicesOccasions() {
     <>
       <h2 className="cluster-header">Occasions</h2>
       <div
-        className="uk-child-width-1-3@m uk-grid-match uk-margin-medium uk-margin-bottom"
+        className="uk-child-width-1-3@m uk-grid-match uk-margin-medium uk-margin-bottom margin-fit-occasions"
         uk-grid="true"
         id="portfolio-section"
         uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: false"

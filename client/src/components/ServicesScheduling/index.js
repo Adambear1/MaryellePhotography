@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import ServicesSchedulingForm from "../ServicesSchedulingForm";
+import "./styles.css";
 
 function ServicesScheduling() {
   const [date, setDate] = useState(new Date());
@@ -18,7 +19,10 @@ function ServicesScheduling() {
       <h1 className="uk-heading-line uk-text-center">
         <span>Schedule By Appointment</span>
       </h1>
-      <div className="uk-child-width-expand@s" uk-grid="true">
+      <div
+        className="uk-child-width-expand@s uk-margin-top margin-bottom-scheduling"
+        uk-grid="true"
+      >
         <div className="uk-flex uk-flex-center">
           {" "}
           <Calendar onChange={onChange} value={date} />

@@ -78,7 +78,10 @@ function ServicesSchedulingForm() {
         </div>
         {bool === true ? (
           <div className="uk-flex uk-flex-center">
-            <button className="uk-button uk-button-default" onSubmit={onSubmit}>
+            <button
+              className="uk-button uk-button-default uk-margin-bottom"
+              onSubmit={onSubmit}
+            >
               Submit!
             </button>
           </div>

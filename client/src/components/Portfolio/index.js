@@ -1,11 +1,14 @@
 import React from "react";
-import InstagramContainer from "../InstagramContainer";
+import PortfolioInstagram from "../PortfolioInstagram";
 import PortfolioTestimonies from "../PortfolioTestimonies";
+import PortfolioMissionStatement from "../PortfolioMissionStatement";
+import "./styles.css";
 
 function Portfolio() {
   return (
     <>
-      <InstagramContainer /> <PortfolioTestimonies />
+      <PortfolioInstagram />
+      <PortfolioMissionStatement /> <PortfolioTestimonies />
     </>
   );
 }

@@ -39,13 +39,15 @@ function Services() {
   });
 
   function click(e) {
-    if (e.target.innerText == "") {
+    if (e.target.innerText == "" || e.target.name) {
       setMain(main);
     }
+    e.preventDefault();
+    console.log(e.target.parentNode.value);
+    setMain(e.target.name);
     setMain(e.target.innerText);
     console.log(selectorState[main]);
   }
-  console.log(main);
 
   return (
     <>
@@ -57,9 +59,9 @@ function Services() {
         <ul className="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-3@m">
           {information.map((item) => {
             return (
-              <li className="uk-list-muted ">
-                <div class="item" onClick={click} onMouseOver={click}>
-                  <div class="polaroid ">
+              <li className="uk-list-muted" onClick={click} onMouseOver={click}>
+                <div class="item">
+                  <div class="polaroid">
                     <img className="image-header-card" src={item.picture} />
                     <div class="caption services-card-name">{item.type}</div>
                   </div>

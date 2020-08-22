@@ -1,30 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles.css";
 
 import Navbar from "../../components/Navbar";
 import Jumbotron from "../../components/Jumbotron";
 import Services from "../../components/Services";
-import BookNow from "../../components/BookNow";
+import Contact from "../../components/Contact";
 import Portfolio from "../../components/Portfolio";
+import Footer from "../../components/Footer";
 
 function Home() {
   const [key, setKey] = useState();
   const [render, setRender] = useState({
-    Services: <Services />,
-    "Book Now": <BookNow />,
-    Portfolio: <Portfolio />,
+    0: <Services />,
+    1: <Contact />,
+    2: <Portfolio />,
   });
+  useEffect(() => {
+    setKey(0);
+  }, []);
+
   function onClick() {
+    document.querySelector(".pag-right").classList.add("temp-hide");
+    let i = key;
+    i++;
+    if (i > 2) {
+      setKey(0);
+    } else {
+      setKey(i);
+    }
     setTimeout(() => {
-      for (let item of document.getElementsByClassName("uk-width-panel")) {
-        // console.log(item);
-        if (item.classList.contains("uk-active")) {
-          console.log(item.childNodes[0].innerText);
-          setKey(item.childNodes[0].innerText);
-        }
-      }
-    }, 1000);
+      document.querySelector(".pag-right").classList.remove("temp-hide");
+    }, 750);
   }
+  console.log(key);
 
   return (
     <>
@@ -48,11 +56,11 @@ function Home() {
               <div className="uk-panel ">
                 <h1
                   className="main-header"
-                  value="bookNow"
-                  name="bookNow"
-                  id="bookNow"
+                  value="contact"
+                  name="contact"
+                  id="contact"
                 >
-                  Book Now
+                  Contact
                 </h1>
               </div>
             </li>
@@ -65,7 +73,7 @@ function Home() {
             </li>
           </ul>
           <a
-            className="uk-position-center-right uk-position-small  pag-right"
+            className="uk-position-center-right uk-position-small pag-right"
             href="#"
             uk-slidenav-next="true"
             uk-slider-item="next"
@@ -73,7 +81,8 @@ function Home() {
           ></a>
         </div>
       </div>
-      <div className="uk-container">{key ? render[key] : null}</div>
+      <div className="uk-container">{render[key]}</div>
+      <Footer />
     </>
   );
 }

@@ -1,0 +1,14 @@
+.testimonial-name,
+.testimonial-compliment {
+  list-style-type: none;
+  margin-top: 1px !important;
+}
+.testimonial-name {
+  font-weight: bold;
+}
+
+.testimonial-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
