@@ -21,16 +21,16 @@ function Navbar() {
                     </li>
                     <li className="uk-nav-divider"></li>
                     <li>
-                      <a href="#">Venues</a>
+                      <a href="#venues">Venues</a>
                     </li>
                     <li>
-                      <a href="#">Occasions</a>
+                      <a href="#occasions">Occasions</a>
                     </li>
                     <li>
-                      <a href="#">Scheduling</a>
+                      <a href="#scheduling">Scheduling</a>
                     </li>
                     <li>
-                      <a href="#">FAQ</a>
+                      <a href="#faq">FAQ</a>
                     </li>
                   </ul>
                 </div>

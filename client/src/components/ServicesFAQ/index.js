@@ -1,7 +1,24 @@
 import React from "react";
+import "./styles.css";
+
+import ServicesFAQGeneral from "../ServicesFAQGeneral";
+import ServicesFAQStyling from "../ServicesFAQStyling";
+import ServicesFAQPostProduction from "../ServicesFAQPostProduction";
 
 function ServicesFAQ() {
-  return <div></div>;
+  return (
+    <>
+      <h2 className="cluster-header" id="faq">
+        FAQ
+      </h2>
+
+      <ServicesFAQGeneral />
+
+      <ServicesFAQStyling />
+
+      <ServicesFAQPostProduction />
+    </>
+  );
 }
 
 export default ServicesFAQ;

@@ -1,31 +1,32 @@
 import React, { useState } from "react";
 import "./styles.css";
+import redRoses from "./images/redRoses.jpg";
+import notepad from "./images/notepad.jpg";
+import wedding from "./images/wedding.jpg";
+import question from "./images/question.jpg";
 import ServicesVenue from "../ServicesVenue";
 import ServicesOccasions from "../ServicesOccasions";
 import ServicesBody from "../ServicesBody";
 import ServicesScheduling from "../ServicesScheduling";
+import ServicesFAQ from "../ServicesFAQ";
 
 function Services() {
   let information = [
     {
       type: "Venues",
-      picture:
-        "https://media.nesta.org.uk/images/Predictions-2019_Twitter_02.width-1200.png",
+      picture: redRoses,
     },
     {
       type: "Occasions",
-      picture:
-        "https://media.nesta.org.uk/images/Predictions-2019_Twitter_02.width-1200.png",
+      picture: wedding,
     },
     {
       type: "Scheduling",
-      picture:
-        "https://media.nesta.org.uk/images/Predictions-2019_Twitter_02.width-1200.png",
+      picture: notepad,
     },
     {
       type: "FAQ",
-      picture:
-        "https://media.nesta.org.uk/images/Predictions-2019_Twitter_02.width-1200.png",
+      picture: question,
     },
   ];
   const [main, setMain] = useState();
@@ -33,6 +34,7 @@ function Services() {
     Venues: <ServicesVenue />,
     Occasions: <ServicesOccasions />,
     Scheduling: <ServicesScheduling />,
+    FAQ: <ServicesFAQ />,
   });
 
   function click(e) {
@@ -55,18 +57,14 @@ function Services() {
         <ul className="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-3@m">
           {information.map((item) => {
             return (
-              <li>
-                <img src={item.picture} alt="" />
-                <div className="uk-position-center uk-panel">
-                  <h1
-                    classNameName="services-card-name"
-                    onClick={click}
-                    onMouseOver={click}
-                  >
-                    {item.type}
-                  </h1>
+              // <li className="uk-list-muted ">
+              <div class="item" onClick={click} onMouseOver={click}>
+                <div class="polaroid ">
+                  <img className="image-header-card" src={item.picture} />
+                  <div class="caption services-card-name">{item.type}</div>
                 </div>
-              </li>
+              </div>
+              // </li>
             );
           })}
         </ul>
