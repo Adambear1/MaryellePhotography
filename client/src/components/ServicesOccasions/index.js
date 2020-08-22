@@ -21,7 +21,7 @@ function ServicesOccasions() {
   ];
   return (
     <>
-      <h2 className="cluster-header">Venues</h2>
+      <h2 className="cluster-header">Occasions</h2>
       <div
         className="uk-child-width-1-3@m uk-grid-match uk-margin-medium uk-margin-bottom"
         uk-grid="true"

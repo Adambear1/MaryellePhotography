@@ -46,19 +46,20 @@ function Services() {
 
   return (
     <>
+      <h1 classNameName="section-header uk-margin-top">Services</h1>
       <div
-        class="uk-position-relative uk-visible-toggle uk-light"
+        className="uk-position-relative uk-visible-toggle uk-light"
         tabindex="-1"
         uk-slider="true"
       >
-        <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-3@m">
+        <ul className="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-3@m">
           {information.map((item) => {
             return (
               <li>
                 <img src={item.picture} alt="" />
-                <div class="uk-position-center uk-panel">
+                <div className="uk-position-center uk-panel">
                   <h1
-                    className="services-card-name"
+                    classNameName="services-card-name"
                     onClick={click}
                     onMouseOver={click}
                   >
@@ -70,13 +71,13 @@ function Services() {
           })}
         </ul>
         <a
-          class="uk-position-center-left uk-position-small uk-hidden-hover"
+          className="uk-position-center-left uk-position-small uk-hidden-hover"
           href="#"
           uk-slidenav-previous="true"
           uk-slider-item="previous"
         ></a>
         <a
-          class="uk-position-center-right uk-position-small uk-hidden-hover"
+          className="uk-position-center-right uk-position-small uk-hidden-hover"
           href="#"
           uk-slidenav-next="true"
           uk-slider-item="next"
