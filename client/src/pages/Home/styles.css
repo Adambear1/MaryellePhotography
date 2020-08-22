@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap");
+
+.main-header {
+  color: rgba(0, 0, 0, 0.9) !important;
+  font-family: "Montserrat", sans-serif;
+  transition: ease 0.3s;
+  margin-top: 50px;
+  /* margin-left: auto; */
+  margin-left: 20px !important;
+}
+
+.uk-panel > :last-child {
+  width: 100px !important;
+}
+
+#bookNow {
+  width: 300px !important;
+}
+
+.pag-right {
+  left: 200px !important;
+  color: black !important;
+  margin-top: 40px;
+}

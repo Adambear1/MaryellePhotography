@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./styles.css";
-import redRoses from "./images/redRoses.jpg";
+import flowers1 from "./images/flowers1.jpg";
 import notepad from "./images/notepad.jpg";
 import wedding from "./images/wedding.jpg";
+import wedding1 from "./images/wedding1.jpg";
 import question from "./images/question.jpg";
 import ServicesVenue from "../ServicesVenue";
 import ServicesOccasions from "../ServicesOccasions";
@@ -14,11 +15,11 @@ function Services() {
   let information = [
     {
       type: "Venues",
-      picture: redRoses,
+      picture: flowers1,
     },
     {
       type: "Occasions",
-      picture: wedding,
+      picture: wedding1,
     },
     {
       type: "Scheduling",
@@ -48,23 +49,22 @@ function Services() {
 
   return (
     <>
-      <h1 classNameName="section-header uk-margin-top">Services</h1>
       <div
-        className="uk-position-relative uk-visible-toggle uk-light"
+        className="uk-position-relative uk-visible-toggle uk-light section-header"
         tabindex="-1"
         uk-slider="true"
       >
         <ul className="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-3@m">
           {information.map((item) => {
             return (
-              // <li className="uk-list-muted ">
-              <div class="item" onClick={click} onMouseOver={click}>
-                <div class="polaroid ">
-                  <img className="image-header-card" src={item.picture} />
-                  <div class="caption services-card-name">{item.type}</div>
+              <li className="uk-list-muted ">
+                <div class="item" onClick={click} onMouseOver={click}>
+                  <div class="polaroid ">
+                    <img className="image-header-card" src={item.picture} />
+                    <div class="caption services-card-name">{item.type}</div>
+                  </div>
                 </div>
-              </div>
-              // </li>
+              </li>
             );
           })}
         </ul>

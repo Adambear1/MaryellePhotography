@@ -43,6 +43,9 @@ function Navbar() {
                     <li>
                       <a href="#">Photos</a>
                     </li>
+                    <li>
+                      <a href="#">Testimonies</a>
+                    </li>
                     <li className="uk-active">
                       <li className="uk-nav-header">Contact</li>
                     </li>
