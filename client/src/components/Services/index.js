@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles.css";
 import flowers1 from "./images/flowers1.jpg";
 import notepad from "./images/notepad.jpg";
@@ -31,6 +31,7 @@ function Services() {
     },
   ];
   const [main, setMain] = useState();
+  const [section, setSection] = useState();
   const [selectorState, setSelectorState] = useState({
     Venues: <ServicesVenue />,
     Occasions: <ServicesOccasions />,
@@ -38,11 +39,18 @@ function Services() {
     FAQ: <ServicesFAQ />,
   });
 
+  // let _section = sessionStorage.getItem("section");
+  // console.log(_section);
+  // if (_section) {
+  //   setSection(_section);
+  // }
+  // console.log(section);
+
   function click(e) {
     if (e.target.innerText == "" || e.target.name) {
       setMain(main);
     }
-    e.preventDefault();
+    sessionStorage.clear();
     console.log(e.target.parentNode.value);
     setMain(e.target.name);
     setMain(e.target.innerText);
@@ -55,6 +63,7 @@ function Services() {
         className="uk-position-relative uk-visible-toggle uk-light section-header"
         tabindex="-1"
         uk-slider="true"
+        id="Services"
       >
         <ul className="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-3@m">
           {information.map((item) => {
@@ -83,7 +92,11 @@ function Services() {
           uk-slider-item="next"
         ></a>
       </div>
-      {<ServicesBody selector={selectorState[main]} />}
+      {section ? (
+        <ServicesBody selector={selectorState[section]} />
+      ) : (
+        <ServicesBody selector={selectorState[main]} />
+      )}
     </>
   );
 }

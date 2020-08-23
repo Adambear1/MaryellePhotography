@@ -27,7 +27,7 @@ function ServicesSchedulingForm() {
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} id="scheduling">
       <fieldset className="uk-fieldset">
         <legend className="uk-legend uk-margin-bottom">Details</legend>
         <div>

@@ -6,10 +6,10 @@ import "./styles.css";
 
 function Portfolio() {
   return (
-    <>
+    <div className="portfolio">
       <PortfolioInstagram />
       <PortfolioMissionStatement /> <PortfolioTestimonies />
-    </>
+    </div>
   );
 }
 

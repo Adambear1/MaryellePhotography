@@ -37,7 +37,9 @@ function ServicesVenue() {
   ];
   return (
     <>
-      <h2 className="cluster-header">Venues</h2>
+      <h2 className="cluster-header" id="venues">
+        Venues
+      </h2>
       <div
         className="uk-child-width-1-3@m uk-grid-match uk-margin-medium margin-fit-venues"
         uk-grid="true"

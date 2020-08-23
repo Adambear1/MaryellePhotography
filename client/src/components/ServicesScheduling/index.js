@@ -16,7 +16,7 @@ function ServicesScheduling() {
 
   return (
     <>
-      <h1 className="uk-heading-line uk-text-center">
+      <h1 className="uk-heading-line uk-text-center" id="scheduling">
         <span>Schedule By Appointment</span>
       </h1>
       <div

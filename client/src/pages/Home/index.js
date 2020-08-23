@@ -47,7 +47,12 @@ function Home() {
           <ul className="uk-slider-items uk-grid ">
             <li className="uk-width-1 uk-width-panel">
               <div className="uk-panel">
-                <h1 className="main-header" value="services" name="services">
+                <h1
+                  className="main-header"
+                  value="services"
+                  name="services"
+                  id="services"
+                >
                   Services
                 </h1>
               </div>
