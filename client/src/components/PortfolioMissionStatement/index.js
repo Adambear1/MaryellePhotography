@@ -4,7 +4,7 @@ function PortfolioMissionStatement() {
   return (
     <>
       <div
-        id="MissionStatement"
+        id="Mission_Statement"
         className="uk-margin uk-card uk-card-default uk-card-body uk-margin-bottom uk-animation-fade"
       >
         <p className="uk-heading-small uk-text-center uk-margin-top">

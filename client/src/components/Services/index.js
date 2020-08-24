@@ -17,18 +17,22 @@ function Services() {
     {
       type: "Venues",
       picture: flowers1,
+      id: "Venues",
     },
     {
       type: "Occasions",
       picture: wedding1,
+      id: "Occasions",
     },
     {
       type: "Scheduling",
       picture: notepad,
+      id: "Scheduling",
     },
     {
       type: "FAQ",
       picture: question,
+      id: "Faq",
     },
   ];
   const [main, setMain] = useState();
@@ -48,11 +52,18 @@ function Services() {
   }, [value]);
 
   function click(e) {
-    if (e.target.innerText == "" || e.target.name) {
-      setMain(main);
+    if (e.target.innerText == "Venues") {
+      setMain("Venues");
     }
-    setMain(e.target.name);
-    setMain(e.target.innerText);
+    if (e.target.innerText == "Occasions") {
+      setMain("Occasions");
+    }
+    if (e.target.innerText == "Scheduling") {
+      setMain("Scheduling");
+    }
+    if (e.target.innerText == "FAQ") {
+      setMain("Faq");
+    }
   }
 
   return (
@@ -62,20 +73,21 @@ function Services() {
         tabIndex="-1"
         uk-slider="true"
         id="Services"
+        key="default_2"
       >
         <ul className="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-3@m services-ul">
           {information.map((item) => {
             return (
               <li
                 className="uk-list-muted"
-                key="default"
                 onClick={click}
                 onMouseOver={click}
+                key={item.type}
               >
                 <div className="item">
                   <div className="polaroid">
                     <img className="image-header-card" src={item.picture} />
-                    <div className="caption services-card-name">
+                    <div id={item.id} className="caption services-card-name">
                       {item.type}
                     </div>
                   </div>

@@ -2,7 +2,10 @@ import React from "react";
 
 function Contact() {
   return (
-    <div className="uk-section uk-section-large uk-section-muted uk-animation-fade">
+    <div
+      id="Contact"
+      className="uk-section uk-section-large uk-section-muted uk-animation-fade"
+    >
       <div id="Book_Now" className="uk-container">
         <h3 className="uk-text-center">Book Now</h3>
         <h4 className="uk-text-center">(253)-555-5555</h4>

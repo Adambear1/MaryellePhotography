@@ -6,7 +6,7 @@ import "./styles.css";
 
 function Portfolio() {
   return (
-    <div className="portfolio">
+    <div className="Portfolio">
       <PortfolioInstagram />
       <PortfolioMissionStatement /> <PortfolioTestimonies />
     </div>

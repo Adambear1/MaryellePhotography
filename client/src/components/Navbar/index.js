@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { Link } from "react-scroll";
 import { Context } from "../Context";
 function Navbar() {
@@ -9,15 +9,44 @@ function Navbar() {
     });
   };
   function onClick(e) {
-    let _val = e.target.innerText.toProperCase().split(" ").join("_").trim();
-    console.log(_val);
-    setValue(_val);
-    toLink(_val);
-  }
-  function toLink(e) {
-    setTimeout(function () {
-      window.location = `#${e}`;
-    }, 500);
+    let _val = e.target.innerText.toProperCase().split(" ").join("_");
+    if (
+      _val == "Venues" ||
+      _val == "Occasions" ||
+      _val == "Scheduling" ||
+      _val == "Faq"
+    ) {
+      setValue("Services");
+      console.log(_val);
+      value &&
+        setTimeout(() => {
+          document
+            .querySelector(`#${_val}`)
+            .scrollIntoView({ block: "end", behavior: "smooth" });
+        });
+    } else if (
+      _val == "Instagram" ||
+      _val == "Mission_Statement" ||
+      _val == "Testimonials"
+    ) {
+      setValue("Portfolio");
+      value &&
+        setTimeout(() => {
+          document.getElementById(`${_val}`).scrollIntoView();
+        });
+    } else if (_val == "Book_Now") {
+      setValue("Contact");
+      value &&
+        setTimeout(() => {
+          document.getElementById(`${_val}`).scrollIntoView();
+        });
+    } else {
+      setValue(_val);
+      value &&
+        setTimeout(() => {
+          document.getElementById(`${_val}`).scrollIntoView();
+        });
+    }
   }
 
   return (
