@@ -15,6 +15,10 @@
   color: rgba(0, 0, 0, 0.5) !important;
 }
 
+.services-ul {
+  margin-bottom: 90px !important;
+}
+
 .services-card-name {
   font-family: "Montserrat", sans-serif;
   color: black;

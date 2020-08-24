@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./styles.css";
 import flowers1 from "./images/flowers1.jpg";
 import notepad from "./images/notepad.jpg";
@@ -10,6 +10,7 @@ import ServicesOccasions from "../ServicesOccasions";
 import ServicesBody from "../ServicesBody";
 import ServicesScheduling from "../ServicesScheduling";
 import ServicesFAQ from "../ServicesFAQ";
+import { Context } from "../Context";
 
 function Services() {
   let information = [
@@ -31,7 +32,6 @@ function Services() {
     },
   ];
   const [main, setMain] = useState();
-  const [section, setSection] = useState();
   const [selectorState, setSelectorState] = useState({
     Venues: <ServicesVenue />,
     Occasions: <ServicesOccasions />,
@@ -39,22 +39,19 @@ function Services() {
     FAQ: <ServicesFAQ />,
   });
 
-  // let _section = sessionStorage.getItem("section");
-  // console.log(_section);
-  // if (_section) {
-  //   setSection(_section);
-  // }
-  // console.log(section);
+  const { value, setValue } = useContext(Context);
+  useEffect(() => {
+    if (value) {
+      setMain(value);
+    }
+  }, [value]);
 
   function click(e) {
     if (e.target.innerText == "" || e.target.name) {
       setMain(main);
     }
-    sessionStorage.clear();
-    console.log(e.target.parentNode.value);
     setMain(e.target.name);
     setMain(e.target.innerText);
-    console.log(selectorState[main]);
   }
 
   return (
@@ -65,7 +62,7 @@ function Services() {
         uk-slider="true"
         id="Services"
       >
-        <ul className="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-3@m">
+        <ul className="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-3@m services-ul">
           {information.map((item) => {
             return (
               <li className="uk-list-muted" onClick={click} onMouseOver={click}>
@@ -92,11 +89,7 @@ function Services() {
           uk-slider-item="next"
         ></a>
       </div>
-      {section ? (
-        <ServicesBody selector={selectorState[section]} />
-      ) : (
-        <ServicesBody selector={selectorState[main]} />
-      )}
+      {main && <ServicesBody selector={selectorState[main]} />}
     </>
   );
 }

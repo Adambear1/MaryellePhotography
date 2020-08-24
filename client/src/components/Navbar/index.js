@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-scroll";
+import { Context } from "../Context";
 function Navbar() {
+  String.prototype.toProperCase = function () {
+    return this.replace(/\w\S*/g, function (txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  };
+  const { value, setValue } = useContext(Context);
   function onClick(e) {
-    let section = e.target.innerText;
-    section.toLowerCase();
-    section.split(" ").join("_");
-    sessionStorage.clear();
-    sessionStorage.setItem("section", section);
+    let _val = e.target.innerText.toProperCase();
+    setValue(_val);
   }
   return (
     <nav className="uk-navbar-container" uk-navbar="true">

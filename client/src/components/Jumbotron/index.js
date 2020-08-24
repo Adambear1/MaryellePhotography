@@ -23,7 +23,6 @@ function Jumbotron() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  console.log(windowDimensions);
   if (+windowDimensions.width < 750) {
     try {
       document
