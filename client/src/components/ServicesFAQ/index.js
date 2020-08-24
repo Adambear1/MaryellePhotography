@@ -8,7 +8,7 @@ import ServicesFAQPostProduction from "../ServicesFAQPostProduction";
 function ServicesFAQ() {
   return (
     <>
-      <h2 className="cluster-header" id="faq">
+      <h2 className="cluster-header" id="Faq">
         FAQ
       </h2>
 

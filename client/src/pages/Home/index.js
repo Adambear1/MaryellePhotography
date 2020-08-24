@@ -6,15 +6,17 @@ import Contact from "../../components/Contact";
 import Portfolio from "../../components/Portfolio";
 
 function Home() {
-  const [key, setKey] = useState(0);
+  const [key, setKey] = useState(1);
   const [render, setRender] = useState({
-    0: <Services />,
-    1: <Contact />,
-    2: <Portfolio />,
+    1: <Services />,
+    2: <Contact />,
+    3: <Portfolio />,
   });
 
   const { value, setValue } = useContext(Context);
-
+  useEffect(() => {
+    document.querySelector(".main-header").innerText = "Services";
+  }, []);
   useEffect(() => {
     if (value) {
       if (value == "Services") {
@@ -22,42 +24,43 @@ function Home() {
         document
           .querySelector(".main-header")
           .classList.add("uk-animation-fade");
-        setKey(0);
+        setKey(1);
       } else if (value == "Contact") {
         document.querySelector(".main-header").innerText = "Contact";
         document
           .querySelector(".main-header")
           .classList.add("uk-animation-fade");
-        setKey(1);
+        setKey(2);
       } else if (value == "Portfolio") {
         document.querySelector(".main-header").innerText = "Portfolio";
         document
           .querySelector(".main-header")
           .classList.add("uk-animation-fade");
-        setKey(2);
+        setKey(3);
       }
     }
-    // else {
-    //setKey(0);
-    // }
     if (key) {
-      if (key == 0) {
+      if (key == 1) {
+        console.log(key);
         document.querySelector(".main-header").innerText = "Services";
-      } else if (key == 1) {
-        document.querySelector(".main-header").innerText = "Contact";
       } else if (key == 2) {
+        console.log(key);
+        document.querySelector(".main-header").innerText = "Contact";
+      } else {
+        console.log(key);
         document.querySelector(".main-header").innerText = "Portfolio";
       }
-    } else {
-      document.querySelector(".main-header").innerText = "Services";
     }
-  }, [value, key]);
+  }, [key, value]);
 
   function onClick() {
+    setValue(null);
     let i = key;
-    console.log(key);
-    i > 2 ? setKey(0) : setKey(+i++);
-
+    i++;
+    if (i > 3) {
+      i = 1;
+    }
+    setKey(i);
     document
       .querySelector(".uk-panel")
       .classList.add(
@@ -76,25 +79,21 @@ function Home() {
           "uk-animation-fast"
         );
       document.querySelector(".pag-right").classList.remove("temp-hide");
-    }, 750);
+    }, 500);
   }
+  console.log(key);
 
   return (
     <>
       <div className="uk-container ">
         <div
           className="uk-position-relative uk-visible-toggle uk-light"
-          tabindex="-1"
+          tabIndex="-1"
           uk-slider="true"
         >
           <div className="uk-slider-items uk-grid ">
             <div className="uk-panel">
-              <h1
-                className="main-header"
-                value="services"
-                name="services"
-                id="services"
-              ></h1>
+              <h1 className="main-header"></h1>
             </div>
           </div>
 

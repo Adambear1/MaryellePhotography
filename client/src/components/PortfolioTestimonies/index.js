@@ -22,7 +22,7 @@ function PortfolioTestimonies() {
   return (
     <>
       <div
-        class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin margin-fit-testimonies"
+        class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin margin-fit-testimonies uk-animation-fade"
         uk-grid="true"
       >
         <div
@@ -42,7 +42,9 @@ function PortfolioTestimonies() {
             class="uk-card-body"
             uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: false"
           >
-            <h1 class="uk-card-title">Testimonials</h1>
+            <h1 class="uk-card-title" id="Testimonials">
+              Testimonials
+            </h1>
             <ul>
               {testimonials.map((item) => {
                 return (

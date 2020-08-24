@@ -6,12 +6,14 @@ function Footer() {
     <footer className="uk-text-center uk-text-middle footer">
       <span> © Adam Birgenheier</span> <br />
       <a
+        title="github"
         uk-icon="icon: github"
         href="https://github.com/adambear1"
         className="contact-icon contact-link-icon"
         target="_blank"
       ></a>
       <a
+        title="mail"
         uk-icon="icon: mail"
         className="contact-icon contact-link-icon"
         href="mailto:adamcarlbirgenheier@gmail.com"

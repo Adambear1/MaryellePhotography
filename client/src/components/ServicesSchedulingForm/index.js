@@ -60,7 +60,7 @@ function ServicesSchedulingForm() {
             name="contactMethod"
             onChange={onChange}
           >
-            <option default="true">Contact Method</option>
+            <option default={true}>Contact Method</option>
             <option value="email">Email</option>
             <option value="text">Text</option>
             <option value="phoneCall">Phone Call</option>

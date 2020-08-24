@@ -2,16 +2,24 @@ import React, { useContext } from "react";
 import { Link } from "react-scroll";
 import { Context } from "../Context";
 function Navbar() {
+  const { value, setValue } = useContext(Context);
   String.prototype.toProperCase = function () {
     return this.replace(/\w\S*/g, function (txt) {
       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
   };
-  const { value, setValue } = useContext(Context);
   function onClick(e) {
-    let _val = e.target.innerText.toProperCase();
+    let _val = e.target.innerText.toProperCase().split(" ").join("_").trim();
+    console.log(_val);
     setValue(_val);
+    toLink(_val);
   }
+  function toLink(e) {
+    setTimeout(function () {
+      window.location = `#${e}`;
+    }, 500);
+  }
+
   return (
     <nav className="uk-navbar-container" uk-navbar="true">
       <div className="uk-navbar-left">
@@ -79,7 +87,7 @@ function Navbar() {
                     </li>
                     <li>
                       <Link
-                        to="FAQ"
+                        to="Faq"
                         spy={true}
                         smooth={true}
                         offset={-70}
@@ -120,7 +128,7 @@ function Navbar() {
                     </li>
                     <li>
                       <Link
-                        to="MissionStatement"
+                        to="Mission_Statement"
                         spy={true}
                         smooth={true}
                         offset={-70}
@@ -132,7 +140,7 @@ function Navbar() {
                     </li>
                     <li>
                       <Link
-                        to="testimonials"
+                        to="Testimonials"
                         spy={true}
                         smooth={true}
                         offset={-70}
@@ -158,7 +166,7 @@ function Navbar() {
                     <li className="uk-nav-divider"></li>
                     <li>
                       <Link
-                        to="BookNow"
+                        to="Book_Now"
                         spy={true}
                         smooth={true}
                         offset={-70}

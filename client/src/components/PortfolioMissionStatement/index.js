@@ -3,7 +3,10 @@ import React from "react";
 function PortfolioMissionStatement() {
   return (
     <>
-      <div className="uk-margin uk-card uk-card-default uk-card-body uk-margin-bottom">
+      <div
+        id="MissionStatement"
+        className="uk-margin uk-card uk-card-default uk-card-body uk-margin-bottom uk-animation-fade"
+      >
         <p className="uk-heading-small uk-text-center uk-margin-top">
           Mission Statement
         </p>

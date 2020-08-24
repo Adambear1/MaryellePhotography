@@ -36,12 +36,13 @@ function Services() {
     Venues: <ServicesVenue />,
     Occasions: <ServicesOccasions />,
     Scheduling: <ServicesScheduling />,
-    FAQ: <ServicesFAQ />,
+    Faq: <ServicesFAQ />,
   });
 
   const { value, setValue } = useContext(Context);
   useEffect(() => {
     if (value) {
+      console.log(value);
       setMain(value);
     }
   }, [value]);
@@ -58,18 +59,25 @@ function Services() {
     <>
       <div
         className="uk-position-relative uk-visible-toggle uk-light section-header"
-        tabindex="-1"
+        tabIndex="-1"
         uk-slider="true"
         id="Services"
       >
         <ul className="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-3@m services-ul">
           {information.map((item) => {
             return (
-              <li className="uk-list-muted" onClick={click} onMouseOver={click}>
-                <div class="item">
-                  <div class="polaroid">
+              <li
+                className="uk-list-muted"
+                key="default"
+                onClick={click}
+                onMouseOver={click}
+              >
+                <div className="item">
+                  <div className="polaroid">
                     <img className="image-header-card" src={item.picture} />
-                    <div class="caption services-card-name">{item.type}</div>
+                    <div className="caption services-card-name">
+                      {item.type}
+                    </div>
                   </div>
                 </div>
               </li>
