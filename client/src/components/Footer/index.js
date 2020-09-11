@@ -4,7 +4,10 @@ import "./styles.css";
 function Footer() {
   return (
     <footer className="uk-text-center uk-text-middle footer">
-      <span> © Adam Birgenheier</span> <br />
+      <a href="http://quality-creations.com" style={{ textDecoration: "none" }}>
+        <span> © Quality Creations</span>
+      </a>{" "}
+      <br />
       <a
         title="github"
         uk-icon="icon: github"
@@ -16,7 +19,7 @@ function Footer() {
         title="mail"
         uk-icon="icon: mail"
         className="contact-icon contact-link-icon"
-        href="mailto:adamcarlbirgenheier@gmail.com"
+        href="mailto:adam@quality-creations.com"
       ></a>
       <a
         uk-icon="icon: linkedin"

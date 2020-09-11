@@ -12,3 +12,8 @@
   left: 0;
   width: 100%;
 }
+
+footer a {
+  text-decoration: none !important;
+  color: rgb(173, 168, 182) !important;
+}
